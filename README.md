@@ -1,4 +1,4 @@
-OUTPUT
+OUTPUT:
 
 [[0 0 0]
  [0 0 0]
