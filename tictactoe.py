@@ -1,18 +1,14 @@
-# Tic-Tac-Toe Program using 
-# random number in Python 
-  
-# importing all necessary libraries 
 import numpy as np 
 import random 
 from time import sleep 
   
-# Creates an empty board 
+
 def create_board(): 
     return(np.array([[0, 0, 0], 
                      [0, 0, 0], 
                      [0, 0, 0]])) 
   
-# Check for empty places on board 
+
 def possibilities(board): 
     l = [] 
       
@@ -23,15 +19,13 @@ def possibilities(board):
                 l.append((i, j)) 
     return(l) 
   
-# Select a random place for the player 
+
 def random_place(board, player): 
     selection = possibilities(board) 
     current_loc = random.choice(selection) 
     board[current_loc] = player 
     return(board) 
   
-# Checks whether the player has three  
-# of their marks in a horizontal row 
 def row_win(board, player): 
     for x in range(len(board)): 
         win = True
@@ -45,8 +39,7 @@ def row_win(board, player):
             return(win) 
     return(win) 
   
-# Checks whether the player has three 
-# of their marks in a vertical row 
+
 def col_win(board, player): 
     for x in range(len(board)): 
         win = True
@@ -60,8 +53,7 @@ def col_win(board, player):
             return(win) 
     return(win) 
   
-# Checks whether the player has three 
-# of their marks in a diagonal row 
+
 def diag_win(board, player): 
     win = True
     y = 0
@@ -78,8 +70,7 @@ def diag_win(board, player):
                 win = False
     return win 
   
-# Evaluates whether there is 
-# a winner or a tie  
+
 def evaluate(board): 
     winner = 0
       
@@ -94,7 +85,7 @@ def evaluate(board):
         winner = -1
     return winner 
   
-# Main function to start the game 
+
 def play_game(): 
     board, winner, counter = create_board(), 0, 1
     print(board) 
@@ -112,5 +103,5 @@ def play_game():
                 break
     return(winner) 
   
-# Driver Code 
+
 print("Winner is: " + str(play_game()))
