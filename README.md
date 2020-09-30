@@ -20,7 +20,7 @@ git clone https://github.com/AtharvaSharma7/TIC-TAC-TOE.git
 cd TIC-TAC-TOE
 ```
 <p> <b>        OR </b> </p>
-<p> Download from the link: https://github.com/AtharvaSharma7/TIC-TAC-TOE.git <p>
+<p> Download from the link: https://github.com/AtharvaSharma7/TIC-TAC-TOE/archive/master.zip <p>
 Then, run these command in the Command Prompt or Terminal.
 
 ```
