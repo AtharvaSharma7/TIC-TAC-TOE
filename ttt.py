@@ -5,16 +5,16 @@ def win(current_game):
 
     def all_same(l):
         if l.count(l[0]) == len(l) and l[0] != 0:
-            return True
-        else:
             return False
+        else:
+            return True
 
     # horizontal
     for row in game:
         print(row)
         if all_same(row):
             print(f"Player {row[0]} is the winner horizontally!")
-            return True
+            return False
 
     # vertical
     for col in range(len(game[0])):
@@ -23,16 +23,7 @@ def win(current_game):
             check.append(row[col])
         if all_same(check):
             print(f"Player {check[0]} is the winner vertically!")
-            return True
-
-    # / diagonal
-    diags = []
-    for idx, reverse_idx in enumerate(reversed(range(len(game)))):
-        diags.append(game[idx][reverse_idx])
-
-    if all_same(diags):
-        print(f"Player {diags[0]} has won Diagonally (/)")
-        return True
+            return False
 
     # \ diagonal
     diags = []
@@ -44,6 +35,15 @@ def win(current_game):
         return True
 
     return False
+
+    # / diagonal
+    diags = []
+    for idx, reverse_idx in enumerate(reversed(range(len(game)))):
+        diags.append(game[idx][reverse_idx])
+
+    if all_same(diags):
+        print(f"Player {diags[0]} has won Diagonally (/)")
+        return True
 
 
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
