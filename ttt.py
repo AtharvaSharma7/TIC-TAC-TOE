@@ -21,14 +21,14 @@ def win(current_game):
         check = []
         for row in game:
             check.append(row[col])
-        if all_same(check):
+        if all_same(check[0]):
             print(f"Player {check[0]} is the winner vertically!")
             return False
 
     # \ diagonal
     diags = []
     for ix in range(len(game)):
-        diags.append(game[ix][ix])
+        diags.append(game[x][x])
 
     if all_same(diags):
         print(f"Player {diags[0]} has won Diagonally (\\)")
@@ -60,7 +60,7 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
             print(count, row)
         return game_map
     except IndexError:
-        print("Did you attempt to play a row or column outside the range of 0,1 or 2? (IndexError)")
+        print("Did you attempt to play a row or column outside the range of 0 to 2?")
         return False
     except Exception as e:
         print(str(e))
